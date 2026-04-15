@@ -14,7 +14,7 @@ namespace SprintFlow.Domain.Entity
         public long TaskId {  get; set; }
         public string Description { get; set; }
         public decimal EstimateTime { get; set; }
-        public long StatusId {  get; set; }
+        public long StatusId {  get; set; } 
         public bool IsDeleted { get; set; }
     }
 }
