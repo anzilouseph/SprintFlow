@@ -15,19 +15,14 @@ namespace SprintFlow.Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public readonly AppDbContext _dbContext;
-        public IGenericRepository<Employee> Employees { get; }
-        public IGenericRepository<Login> Logins { get; }
-
-        public  IGenericRepository<Role> Roles { get; }
-
-
+        private readonly AppDbContext _dbContext;
         public UnitOfWork(AppDbContext dbContext)
         {
-            _dbContext = dbContext;
-            Employees = new GenericRepository<Employee>(_dbContext);
-            Logins = new GenericRepository<Login>(_dbContext);
-            Roles = new GenericRepository<Role>(_dbContext);
+            _dbContext = dbContext; 
         }
+
+        public IGenericRepository<Login> Logins => new GenericRepository<Login>(_dbContext);
+        public IGenericRepository<Employee> Employees => new GenericRepository<Employee>(_dbContext);   
+        public IGenericRepository<Role> Roles => new GenericRepository<Role>(_dbContext);
     }
 }

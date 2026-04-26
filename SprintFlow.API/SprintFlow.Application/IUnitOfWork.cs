@@ -12,6 +12,7 @@ namespace SprintFlow.Application
     {
        public  IGenericRepository<Login> Logins { get; }
        public IGenericRepository<Employee> Employees { get; }
+        public IGenericRepository<Role> Roles { get; }
 
     }
 }

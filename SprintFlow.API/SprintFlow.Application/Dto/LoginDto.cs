@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace SprintFlow.Application.Dto
 {
-    internal class LoginDto
+    public class LoginDto
     {
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Salt { get; set; }
+        public string IsDeleted { get; set; }
+        public long RoleId { get; set; }    
     }
 }

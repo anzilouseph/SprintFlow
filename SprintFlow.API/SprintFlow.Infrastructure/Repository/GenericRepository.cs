@@ -21,9 +21,9 @@ namespace SprintFlow.Infrastructure.Repository
             _dbSet = dbcontext.Set<T>();
         }
 
-        public async Task<List<T>> GetAll()
+        public IQueryable<T> GetAll()
         {
-            return await _dbSet.ToListAsync();
+            return _dbSet.AsQueryable();
         }
         public async Task Add (T entity)
         {
